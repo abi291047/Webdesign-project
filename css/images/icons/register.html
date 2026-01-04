@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login | Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h2>Attendance</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Add Student</a></li>
+            <li><a href="#">Attendance</a></li>
+            <li><a href="#">Report</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Card -->
+    <div class="login-container">
+        <h1>Student Login</h1>
+
+        <form onsubmit ="loginStudent(event)">
+            <input type="text" placeholder="Student Name" required>
+            <input type="text" placeholder="Roll Number" required>
+           
+            <select required>
+                <option value="">Select Department</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>IT</option>
+            </select>
+
+            <select required>
+                <option value="">Select Section</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+
+            <input type="tel" placeholder="Contact Number" required>
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+<script>
+  function loginStudent(event)
+  {
+    event.preventDefault();
+    window.location.href ="./attendance.html";
+  }
+</script>
+</body>
+</html>

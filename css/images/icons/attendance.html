@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo">Attendance System</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Dashboard</a></li>
+    <li><a href="register.html">Add Student</a></li>
+    <li><a href="student-list.html">Attendance</a></li>
+    <li><a href="attendance.html">Report</a></li>
+    <li><a href="class.html">Classes</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+  <div class="attendance-container">
+    <h2>Student Attendance</h2><br>
+
+    <form onsubmit="submitAttendance(event)">
+
+      <label>Student Name</label>
+      <input type="text" placeholder="Enter Student Name" required><br>
+
+      <label>Roll Number</label>
+      <input type="text" placeholder="Enter Roll Number" required><br>
+
+      <label>Date</label>
+      <input type="date" required><br>
+
+      <label>Status</label>
+      <select required>
+        <option value="">Select Status</option>
+        <option>Present</option>
+        <option>Absent</option>
+      </select><br>
+
+      <button type="submit">Submit Attendance</button>
+    </form>
+
+  </div>
+
+  <script>
+    function submitAttendance(event) {
+      event.preventDefault();
+  const data = {
+    name: document.querySelector('input[placeholder="Enter Student Name"]').value,
+    roll: document.querySelector('input[placeholder="Enter Roll Number"]').value,
+    date: document.querySelector('input[type="date"]').value,
+    status: document.querySelector('select').value
+  };
+
+  localStorage.setItem("attendanceData", JSON.stringify(data));
+
+  window.location.href = "report.html";
+}
+  </script>
+
+</body>
+</html>
